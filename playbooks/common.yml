@@ -1,0 +1,30 @@
+---
+
+- name: update web servers
+  hosts: webservers
+  become: yes
+  become_user: root
+  tasks:
+    - name: install wireshark latest version
+      apt:
+        name: wireshark
+        state: latest
+
+    - name: install snapd
+      apt:
+        name: snapd
+        state: latest
+
+    - name: install gimp
+      apt:
+        name: gimp
+        state: latest
+
+- name: update web server
+  hosts: webservers
+  become: yes
+  become_user: root
+  tasks:
+    - name: Update apt repo
+      apt: 
+        update_cache: yes
