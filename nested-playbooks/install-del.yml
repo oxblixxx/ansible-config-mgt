@@ -1,0 +1,10 @@
+---
+- name: update web, nfs and db servers
+  hosts: webservers, db
+  become: yes
+  become_user: root
+  tasks:
+  - name: delete wireshark
+    apt:
+      name: wireshark
+      state: absent

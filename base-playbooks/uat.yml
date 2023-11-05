@@ -1,0 +1,4 @@
+---
+
+- hosts: uat-server
+- import_playbook: ../nested-playbooks/uat-servers.yml
